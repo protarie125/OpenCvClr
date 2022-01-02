@@ -1,10 +1,17 @@
-﻿#pragma once
+#pragma once
+#include <opencv2/opencv.hpp>
+
+#include "Mat.h"
+#include "ImreadModes.h"
 
 using namespace System;
 
 namespace OpenCvClr {
-	public ref class Class1
+	public ref class Cv abstract sealed
 	{
-		// TODO: 여기에 이 클래스에 대한 메서드를 추가합니다.
+	public:
+		static OpenCvClr::Mat^ ImRead(String^ filename, OpenCvClr::ImreadModes flags);
+
+		static bool ImWrite(String^ filename, OpenCvClr::Mat^ mat);
 	};
 }
