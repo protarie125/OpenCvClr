@@ -20,6 +20,16 @@ OpenCvClr::Mat::Mat(int rows, int cols, OpenCvClr::MatType type)
 	nativeMat_ = new cv::Mat(rows, cols, (int)type);
 }
 
+OpenCvClr::Mat::~Mat()
+{
+	this->!Mat();
+}
+
+OpenCvClr::Mat::!Mat()
+{
+	delete nativeMat_;
+}
+
 bool OpenCvClr::Mat::ImWrite(String^ filename)
 {
 	try

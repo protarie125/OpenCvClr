@@ -19,6 +19,10 @@ namespace OpenCvClr {
 
 		Mat(int rows, int cols, OpenCvClr::MatType type);
 
+		~Mat();
+
+		!Mat();
+
 		bool ImWrite(String^ filename);
 	};
 }
